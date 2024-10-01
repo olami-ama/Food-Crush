@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManagerX : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText;
     public TextMeshProUGUI gameOverText;
     public GameObject titleScreen;
     public Button restartButton; 
@@ -32,7 +32,7 @@ public class GameManagerX : MonoBehaviour
         StartCoroutine(SpawnTarget());
         score = 0;
         UpdateScore(0);
-        timeLeft = 60;
+       timeLeft = 60;
         titleScreen.SetActive(false);
     }
 
@@ -93,15 +93,21 @@ public class GameManagerX : MonoBehaviour
     private void Update() 
     {
   if (isGameActive) 
-  {
+  
+   {
  timeLeft -= Time.deltaTime;
  timerText.SetText("Time: " + Mathf.Round(timeLeft));
+
   }
  if (timeLeft < 0) 
+
  {
  GameOver();
+
  }
-    }
+ }
+ 
 }
+
 
 

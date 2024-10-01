@@ -59,11 +59,12 @@ public class TargetX : MonoBehaviour
     // If target that is NOT the bad object collides with sensor, trigger game over
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-
+        
         if (other.gameObject.CompareTag("Sensor") && !gameObject.CompareTag("Bad"))
         {
             gameManagerX.GameOver();
+            Destroy(gameObject);
+
         } 
 
     }
